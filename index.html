@@ -55,9 +55,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
-        /* ============================================================
-                   ROOT VARIABLES — Premium Glass Palette
-                   ============================================================ */
+        /* ROOT VARIABLES — Premium Glass Palette */
         :root {
             --midnight: #020617;
             --slate: #94a3b8;
@@ -96,9 +94,7 @@
             --max-width: 720px;
         }
 
-        /* ============================================================
-                   RESET & BASE
-                   ============================================================ */
+        /* RESET & BASE */
         * {
             margin: 0;
             padding: 0;
@@ -166,9 +162,7 @@
             }
         }
 
-        /* ============================================================
-                   SCROLLBAR
-                   ============================================================ */
+        /* SCROLLBAR */
         ::-webkit-scrollbar {
             width: 4px;
             height: 4px;
@@ -184,9 +178,7 @@
             background: var(--blue-50);
         }
 
-        /* ============================================================
-                   HEADER — Fixed Glass Navigation
-                   ============================================================ */
+        /* HEADER — Fixed Glass Navigation */
         .header {
             position: fixed;
             top: 0;
@@ -426,9 +418,7 @@
             font-size: 1.2rem;
         }
 
-        /* ============================================================
-                   MAIN WRAP
-                   ============================================================ */
+        /* MAIN WRAP */
         .main-wrap {
             position: relative;
             z-index: 1;
@@ -439,9 +429,7 @@
             flex: 1;
         }
 
-        /* ============================================================
-                   HERO
-                   ============================================================ */
+        /* HERO */
         .hero {
             text-align: center;
             padding: 2rem 1rem 2.5rem;
@@ -532,9 +520,7 @@
             transform: scale(0.97);
         }
 
-        /* ============================================================
-                   GLASS CARD
-                   ============================================================ */
+        /* GLASS CARD */
         .glass-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -580,9 +566,7 @@
             padding: 1.25rem 1.5rem 1.5rem;
         }
 
-        /* ============================================================
-                   TABS
-                   ============================================================ */
+        /* TABS */
         .tabs {
             display: flex;
             gap: 0.25rem;
@@ -641,9 +625,7 @@
             }
         }
 
-        /* ============================================================
-                   MODE BUTTONS
-                   ============================================================ */
+        /* MODE BUTTONS */
         .mode-row {
             display: flex;
             gap: 0.25rem;
@@ -682,9 +664,7 @@
             outline-offset: 2px;
         }
 
-        /* ============================================================
-                   SLIDER
-                   ============================================================ */
+        /* SLIDER */
         .slider-row {
             display: flex;
             align-items: center;
@@ -751,9 +731,7 @@
             flex-shrink: 0;
         }
 
-        /* ============================================================
-                   PILLS / CHIPS
-                   ============================================================ */
+        /* PILLS / CHIPS */
         .pill-grid {
             display: flex;
             flex-wrap: wrap;
@@ -834,9 +812,7 @@
             color: var(--blue);
         }
 
-        /* ============================================================
-                   PASSPHRASE / PIN CONTROLS
-                   ============================================================ */
+        /* PASSPHRASE / PIN CONTROLS */
         .pp-row {
             display: flex;
             align-items: center;
@@ -866,9 +842,7 @@
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.06);
         }
 
-        /* ============================================================
-                   GENERATE BUTTON
-                   ============================================================ */
+        /* GENERATE BUTTON */
         .gen-btn {
             width: 100%;
             padding: 0.85rem 1.5rem;
@@ -911,9 +885,7 @@
             outline-offset: 4px;
         }
 
-        /* ============================================================
-                   PASSWORD DISPLAY
-                   ============================================================ */
+        /* PASSWORD DISPLAY */
         .pw-display {
             background: rgba(0, 0, 0, 0.35);
             border: 1px solid var(--glass-border);
@@ -1028,9 +1000,7 @@
             transform: translateX(-50%) translateY(-4px);
         }
 
-        /* ============================================================
-                   STRENGTH METER
-                   ============================================================ */
+        /* STRENGTH METER */
         .strength-row {
             display: flex;
             align-items: center;
@@ -1112,9 +1082,7 @@
             flex-shrink: 0;
         }
 
-        /* ============================================================
-                   HISTORY
-                   ============================================================ */
+        /* HISTORY */
         .hist-header {
             display: flex;
             justify-content: space-between;
@@ -1212,9 +1180,7 @@
             font-family: var(--font-mono);
         }
 
-        /* ============================================================
-                   ANALYZE
-                   ============================================================ */
+        /* ANALYZE */
         .analyze-input {
             width: 100%;
             background: rgba(0, 0, 0, 0.3);
@@ -1302,9 +1268,7 @@
             color: var(--text-muted);
         }
 
-        /* ============================================================
-                   VAULT
-                   ============================================================ */
+        /* VAULT */
         .vault-header {
             display: flex;
             justify-content: space-between;
@@ -1507,9 +1471,7 @@
             transform: scale(1.08);
         }
 
-        /* ============================================================
-                   TIPS
-                   ============================================================ */
+        /* TIPS */
         .tip-item {
             display: flex;
             gap: 0.8rem;
@@ -1539,9 +1501,7 @@
             line-height: 1.55;
         }
 
-        /* ============================================================
-                   EMPTY STATES
-                   ============================================================ */
+        /* EMPTY STATES */
         .empty-state {
             text-align: center;
             padding: 1.75rem 1rem;
@@ -1561,9 +1521,7 @@
             opacity: 0.3;
         }
 
-        /* ============================================================
-                   NOTIFICATION
-                   ============================================================ */
+        /* NOTIFICATION */
         .notif {
             position: fixed;
             top: calc(var(--header-height) + 1rem);
@@ -1599,9 +1557,7 @@
             transition: all var(--transition-soft);
         }
 
-        /* ============================================================
-                   COOKIE BANNER
-                   ============================================================ */
+        /* COOKIE BANNER */
         .cookie-banner {
             position: fixed;
             bottom: 0;
@@ -1676,9 +1632,7 @@
             box-shadow: 0 0 28px rgba(59, 130, 246, 0.3);
         }
 
-        /* ============================================================
-                   FOOTER
-                   ============================================================ */
+        /* FOOTER */
         .footer {
             background: var(--midnight);
             color: rgba(255, 255, 255, 0.6);
@@ -1782,9 +1736,7 @@
             border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        /* ============================================================
-                   LANGUAGE MODAL
-                   ============================================================ */
+        /* LANGUAGE MODAL */
         .lang-overlay {
             position: fixed;
             inset: 0;
@@ -2010,9 +1962,7 @@
             fill: none;
         }
 
-        /* ============================================================
-                   RESPONSIVE
-                   ============================================================ */
+        /* RESPONSIVE */
 
         /* Tablets & small desktops */
         @media (max-width: 1024px) {
@@ -2349,9 +2299,7 @@
             }
         }
 
-        /* ============================================================
-                   REDUCED MOTION
-                   ============================================================ */
+        /* REDUCED MOTION */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -2398,9 +2346,7 @@
             }
         }
 
-        /* ============================================================
-                   RTL SUPPORT
-                   ============================================================ */
+        /* RTL SUPPORT */
         [dir="rtl"] .notif {
             right: auto;
             left: 1.5rem;
@@ -2442,9 +2388,7 @@
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER — Fixed Glass Navigation
-    ============================================================ -->
+    <!-- HEADER — Fixed Glass Navigation -->
     <header class="header" id="mainHeader" role="banner">
         <div class="header-inner">
             <!-- Brand -->
@@ -2485,9 +2429,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    MOBILE NAV
-    ============================================================ -->
+    <!-- MOBILE NAV -->
     <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
         <a class="mobile-link" href="#generator"><span class="icon">🔐</span> Generator</a>
         <a class="mobile-link" href="#history"><span class="icon">📋</span> Riwayat</a>
@@ -2496,9 +2438,7 @@
         <a class="mobile-link" href="#tips"><span class="icon">💡</span> Tips</a>
     </nav>
 
-    <!-- ============================================================
-    LANGUAGE MODAL
-    ============================================================ -->
+    <!-- LANGUAGE MODAL -->
     <div class="lang-overlay" id="langOverlay" role="dialog" aria-modal="true">
         <div class="lang-backdrop" id="langBackdrop"></div>
         <div class="lang-panel">
@@ -2519,12 +2459,10 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
+    <!-- MAIN CONTENT -->
     <main class="main-wrap" id="mainContent">
 
-        <!-- ======= HERO ======= -->
+        <!-- HERO -->
         <section class="hero" aria-label="Hero">
             <div class="hero-badge">
                 <span class="dot"></span>
@@ -2535,7 +2473,7 @@
             <a class="hero-cta" href="#generator">✨ Mulai Sekarang</a>
         </section>
 
-        <!-- ======= GENERATOR CARD ======= -->
+        <!-- GENERATOR CARD -->
         <section class="glass-card" id="generator" aria-label="Password Generator">
             <div class="glass-card-header">
                 <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -2648,7 +2586,7 @@
             </div>
         </section>
 
-        <!-- ======= BOTTOM CARD: TABS ======= -->
+        <!-- BOTTOM CARD: TABS -->
         <section class="glass-card" aria-label="Tools">
             <div class="glass-card-body">
 
@@ -2728,9 +2666,7 @@
 
     </main>
 
-    <!-- ============================================================
-    COOKIE BANNER
-    ============================================================ -->
+    <!-- COOKIE BANNER -->
     <div class="cookie-banner" id="cookieBanner" role="alert">
         <div class="text">
             🍪 This site uses cookies to enhance your experience.
@@ -2743,9 +2679,7 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
         <div class="footer-inner">
             <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="Haiere Logo" class="footer-logo" loading="lazy" decoding="async" />
@@ -2761,29 +2695,23 @@
 
             <div class="footer-meta">
                 <span class="copyright">© 2026 Haiere. All rights reserved.</span>
-                <span class="version">v1.2.1</span>
+                <span class="version">v1.2.2 • stable</span>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================================
-    NOTIFICATION
-    ============================================================ -->
+    <!-- NOTIFICATION -->
     <div class="notif" id="notif" role="status" aria-live="polite">
         <div class="ndot" id="ndot"></div>
         <span id="ntxt">OK</span>
     </div>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
+    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
 
-            /* ============================================================
-               CONSTANTS & UTILITIES
-               ============================================================ */
+            /* CONSTANTS & UTILITIES */
             const $ = (sel, ctx = document) => ctx.querySelector(sel);
             const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
             const T = key => (L10N[curLang] && L10N[curLang][key]) || key;
@@ -2798,9 +2726,7 @@
                 'orbit', 'pixel', 'quest', 'radio', 'solar', 'tower', 'unity', 'valor', 'wheat', 'yacht'
             ];
 
-            /* ============================================================
-               STATE
-               ============================================================ */
+            /* STATE */
             let curLang = 'id';
             let mode = 'random';
             let curPw = '';
@@ -2809,9 +2735,7 @@
             let vault = [];
             let cookieAccepted = null;
 
-            /* ============================================================
-               TRANSLATIONS
-               ============================================================ */
+            /* TRANSLATIONS */
             const L10N = {
                 en: {
                     flag: '🇬🇧',
@@ -2993,9 +2917,7 @@
                 }
             };
 
-            /* ============================================================
-               STORAGE
-               ============================================================ */
+            /* STORAGE */
             function loadStorage() {
                 try {
                     const v = localStorage.getItem('raia_vault');
@@ -3026,9 +2948,7 @@
                 $('#statSav').textContent = vault.length;
             }
 
-            /* ============================================================
-               COOKIE BANNER
-               ============================================================ */
+            /* COOKIE BANNER */
             function handleCookieBanner() {
                 const banner = $('#cookieBanner');
                 if (cookieAccepted === true || cookieAccepted === false) {
@@ -3052,9 +2972,7 @@
                 notify('🍪 Cookie ditolak');
             }
 
-            /* ============================================================
-               NOTIFICATION
-               ============================================================ */
+            /* NOTIFICATION */
             let notifTimer;
 
             function notify(msg, err = false) {
@@ -3069,9 +2987,7 @@
                 notifTimer = setTimeout(() => el.classList.remove('show'), 2500);
             }
 
-            /* ============================================================
-               CRYPTO RANDOM
-               ============================================================ */
+            /* CRYPTO RANDOM */
             function cryptoRandom(min, max) {
                 const range = max - min + 1;
                 const bytes = new Uint32Array(1);
@@ -3079,9 +2995,7 @@
                 return min + Math.floor(bytes[0] / (0xffffffff + 1) * range);
             }
 
-            /* ============================================================
-               GENERATOR
-               ============================================================ */
+            /* GENERATOR */
             function getCharset() {
                 let c = '';
                 const checks = ['cU', 'cL', 'cN', 'cS', 'cSp'];
@@ -3182,9 +3096,7 @@
                 return '';
             }
 
-            /* ============================================================
-               STRENGTH
-               ============================================================ */
+            /* STRENGTH */
             function entropy(pw) {
                 if (!pw.length) return 0;
                 let p = 0;
@@ -3241,9 +3153,7 @@
                 rfl.style.stroke = col;
             }
 
-            /* ============================================================
-               SET PASSWORD
-               ============================================================ */
+            /* SET PASSWORD */
             function setPw(pw) {
                 curPw = pw;
                 const el = $('#pwt');
@@ -3262,9 +3172,7 @@
                 }
             }
 
-            /* ============================================================
-               HISTORY
-               ============================================================ */
+            /* HISTORY */
             function addHistory(pw) {
                 const bits = entropy(pw);
                 const score = scoreBits(bits);
@@ -3310,9 +3218,7 @@
                 renderHist();
             }
 
-            /* ============================================================
-               ANALYZE
-               ============================================================ */
+            /* ANALYZE */
             function analyzeInput(pw) {
                 const res = $('#ares');
                 if (!pw) { res.style.display = 'none'; return; }
@@ -3348,9 +3254,7 @@
                   `).join('');
             }
 
-            /* ============================================================
-               VAULT
-               ============================================================ */
+            /* VAULT */
             function useCurrentPw() { $('#vPw').value = curPw; }
 
             function saveVaultEntry() {
@@ -3444,9 +3348,7 @@
                 notify(T('nDL'));
             }
 
-            /* ============================================================
-               TIPS
-               ============================================================ */
+            /* TIPS */
             function renderTips() {
                 const tips = L10N[curLang].tips;
                 if (!tips) return;
@@ -3461,9 +3363,7 @@
                   `).join('');
             }
 
-            /* ============================================================
-               LANGUAGE
-               ============================================================ */
+            /* LANGUAGE */
             function buildLangGrid() {
                 const keys = Object.keys(L10N);
                 const html = keys.map(k => {
@@ -3569,9 +3469,7 @@
                 if (inp && inp.value) inp.dispatchEvent(new Event('input'));
             }
 
-            /* ============================================================
-               TABS
-               ============================================================ */
+            /* TABS */
             function switchTab(tabId) {
                 const tabs = ['hist', 'ana', 'vault', 'tips'];
                 $$('.tab').forEach((btn, i) => {
@@ -3582,9 +3480,7 @@
                 });
             }
 
-            /* ============================================================
-               ESCAPE HTML
-               ============================================================ */
+            /* ESCAPE HTML */
             function escapeHtml(s) {
                 if (!s) return '';
                 return s.replace(/[&<>"']/g, m => {
@@ -3593,9 +3489,7 @@
                 });
             }
 
-            /* ============================================================
-               SLIDER HELPERS
-               ============================================================ */
+            /* SLIDER HELPERS */
             function initSlider(rangeId, displayId) {
                 const range = $(`#${rangeId}`);
                 const display = $(`#${displayId}`);
@@ -3608,9 +3502,7 @@
                 update();
             }
 
-            /* ============================================================
-               HEADER SCROLL EFFECT
-               ============================================================ */
+            /* HEADER SCROLL EFFECT */
             function initHeaderScroll() {
                 const header = $('#mainHeader');
                 let lastScroll = 0;
@@ -3625,9 +3517,7 @@
                 }, { passive: true });
             }
 
-            /* ============================================================
-               HAMBURGER
-               ============================================================ */
+            /* HAMBURGER */
             function initHamburger() {
                 const btn = $('#hamburgerBtn');
                 const nav = $('#mobileNav');
@@ -3654,9 +3544,7 @@
                 });
             }
 
-            /* ============================================================
-               SMOOTH SCROLL FOR HERO CTA
-               ============================================================ */
+            /* SMOOTH SCROLL FOR HERO CTA */
             function initSmoothScroll() {
                 document.querySelector('.hero-cta').addEventListener('click', (e) => {
                     e.preventDefault();
@@ -3668,9 +3556,7 @@
                 });
             }
 
-            /* ============================================================
-               INIT & EVENT BINDING
-               ============================================================ */
+            /* INIT & EVENT BINDING */
             function init() {
                 // Load storage
                 loadStorage();
