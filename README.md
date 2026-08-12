@@ -6,33 +6,6 @@ Raia Vault is a privacy-focused web application that runs entirely in your brows
 
 The tool is designed for individuals who need a simple, self-contained solution for creating, storing, and evaluating passwords without relying on third-party cloud services.
 
----
-
-## Features
-
-- Password generator — Supports random characters, pronounceable passwords, passphrases, and numeric PINs with configurable length and character sets.
-- Password strength analysis — Real-time entropy calculation, crack time estimation, and visual strength indicators.
-- Secure local vault — Store website, username, and password entries in your browser's `localStorage`. No external database or server is used.
-- History — Automatically saves generated passwords with timestamps and strength scores for quick reuse.
-- CSV export — Export your vault entries as a CSV file for backup or migration.
-- Privacy controls — All processing is local; no analytics, tracking, or data transmission occurs.
-- Multi-language support — English and Indonesian interfaces are available, with easy switching.
-
----
-
-## Requirements
-
-Berikut versi README.md yang sudah dirapikan, distrukturkan ulang, dan dibersihkan tanpa emoji. Saya juga menyesuaikan gaya penulisan agar konsisten dengan README proyek sebelumnya.
-
-```md
-# Raia Vault
-
-A secure client-side password manager with a built-in password generator, vault storage, and strength analysis tools.
-
-Raia Vault is a privacy-focused web application that runs entirely in your browser. It provides a password generator with multiple modes (random, pronounceable, passphrase, and PIN), a local vault for storing credentials, and real-time password strength analysis. No data is ever sent to a server—all information remains on your device.
-
-The tool is designed for individuals who need a simple, self-contained solution for creating, storing, and evaluating passwords without relying on third-party cloud services.
-
 ***
 
 ## Features
