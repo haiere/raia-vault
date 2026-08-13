@@ -170,7 +170,7 @@ Raia Vault is provided as open source under the MIT license. See the `LICENSE` f
 
 ## Author and Support
 
-Developed and maintained by Haiere. For questions, feedback, or support, please use the issue tracker or contact via the project repository.
+Developed and maintained by Haiere and HajirStudio. For questions, feedback, or support, please use the issue tracker or contact via the project repository.
 
 ***
 
