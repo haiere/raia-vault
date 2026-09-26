@@ -1,3 +1,6 @@
+/* ==========================================================================
+   RAIA VAULT v1.2.3 — SCRIPT.JS
+   ========================================================================== */
 (function() {
     'use strict';
 
@@ -15,7 +18,33 @@
         'orbit', 'pixel', 'quest', 'radio', 'solar', 'tower', 'unity', 'valor', 'wheat', 'yacht'
     ];
 
-    let curLang = 'id';
+    /* SVG ICON LIBRARY */
+    const ICONS = {
+        lock: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+        clipboard: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>',
+        chart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
+        vault: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="8" x2="12" y2="12"/></svg>',
+        bulb: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>',
+        bolt: '<svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+        cookie: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>',
+        globe: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+        phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>',
+        home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12L12 3l9 9"/><path d="M5 10v10h14V10"/></svg>',
+        cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="20" cy="20" r="1"/><path d="M1 1h4l2.7 13.4A2 2 0 0 0 7.7 16h9.6a2 2 0 0 0 2-1.6L21 6H6"/></svg>',
+        mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>',
+        gamepad: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="16" cy="11" r="1"/><circle cx="18" cy="13" r="1"/></svg>',
+        briefcase: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>',
+        shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+        key: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><line x1="10.85" y1="12.15" x2="19" y2="4"/><line x1="18" y1="5" x2="20" y2="7"/><line x1="15" y1="8" x2="17" y2="10"/></svg>',
+        ruler: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="1"/><line x1="6" y1="8" x2="6" y2="12"/><line x1="10" y1="8" x2="10" y2="12"/><line x1="14" y1="8" x2="14" y2="12"/><line x1="18" y1="8" x2="18" y2="12"/></svg>',
+        shuffle: '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+        prohibit: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+        cabinet: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="9" y1="3" x2="9" y2="21"/></svg>',
+        refresh: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4v6h-6"/><path d="M20.49 15A9 9 0 1 1 5.64 5.64L1 10"/></svg>',
+        coffee: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>'
+    };
+
+    let curLang = 'en';
     let mode = 'random';
     let curPw = '';
     let genCount = 0;
@@ -73,9 +102,9 @@
             cbLo: 'Lowercase',
             cbNu: 'Numbers',
             cbSy: 'Symbols',
-            vSitePH: '🌐 Website / App',
-            vUserPH: '👤 Username / Email',
-            vPwPH: '🔑 Password',
+            vSitePH: 'Website / App',
+            vUserPH: 'Username / Email',
+            vPwPH: 'Password',
             btnUseCur: 'Use current',
             btnSaveV: 'Save to Vault',
             sLabels: ['Very Weak', 'Weak', 'Fair', 'Strong', 'Very Strong'],
@@ -97,20 +126,20 @@
             nFill: 'Fill site & password!',
             nFail: 'Copy failed',
             nSwitched: 'Language set to English',
-            langTitle: 'Language / Bahasa',
+            langTitle: 'Select Language',
             langSearch: 'Search language…',
             heroTitle: 'Raia Vault',
             heroDesc: 'Generate, store, and analyze passwords with enterprise-grade security — right in your browser.',
-            heroCta: '✨ Get Started',
+            heroCta: 'Get Started',
             tips: [
-                { e: '🔑', t: 'Use unique passwords', b: 'Every account needs a different password.' },
-                { e: '📏', t: 'At least 16 characters', b: 'Longer passwords dramatically increase security.' },
-                { e: '🔀', t: 'Mix character types', b: 'Use uppercase, lowercase, numbers and symbols together.' },
-                { e: '🗝', t: 'Passphrases are strong', b: '"Apple-Sky-Blue-Guitar" is easier to remember and safer.' },
-                { e: '🚫', t: 'Avoid personal info', b: "Don't use your name, birthday, or common words." },
-                { e: '🔒', t: 'Enable 2FA', b: 'Two-factor authentication adds extra security.' },
-                { e: '🗃', t: 'Use a password manager', b: 'Helps you store and manage thousands of unique passwords.' },
-                { e: '🔄', t: 'Rotate passwords regularly', b: 'Change at least every 6–12 months for important accounts.' }
+                { icon: 'key', t: 'Use unique passwords', b: 'Every account needs a different password.' },
+                { icon: 'ruler', t: 'At least 16 characters', b: 'Longer passwords dramatically increase security.' },
+                { icon: 'shuffle', t: 'Mix character types', b: 'Use uppercase, lowercase, numbers and symbols together.' },
+                { icon: 'key', t: 'Passphrases are strong', b: '"Apple-Sky-Blue-Guitar" is easier to remember and safer.' },
+                { icon: 'prohibit', t: 'Avoid personal info', b: "Don't use your name, birthday, or common words." },
+                { icon: 'lock', t: 'Enable 2FA', b: 'Two-factor authentication adds extra security.' },
+                { icon: 'cabinet', t: 'Use a password manager', b: 'Helps you store and manage thousands of unique passwords.' },
+                { icon: 'refresh', t: 'Rotate passwords regularly', b: 'Change at least every 6–12 months for important accounts.' }
             ]
         },
         id: {
@@ -162,9 +191,9 @@
             cbLo: 'Huruf kecil',
             cbNu: 'Angka',
             cbSy: 'Simbol',
-            vSitePH: '🌐 Website / Aplikasi',
-            vUserPH: '👤 Username / Email',
-            vPwPH: '🔑 Password',
+            vSitePH: 'Website / Aplikasi',
+            vUserPH: 'Username / Email',
+            vPwPH: 'Password',
             btnUseCur: 'Pakai saat ini',
             btnSaveV: 'Simpan ke Vault',
             sLabels: ['Sangat Lemah', 'Lemah', 'Cukup', 'Kuat', 'Sangat Kuat'],
@@ -186,25 +215,25 @@
             nFill: 'Isi website & password!',
             nFail: 'Gagal menyalin',
             nSwitched: 'Bahasa diubah ke Indonesia',
-            langTitle: 'Bahasa / Language',
+            langTitle: 'Pilih Bahasa',
             langSearch: 'Cari bahasa…',
             heroTitle: 'Raia Vault',
             heroDesc: 'Hasilkan, simpan, dan analisis password dengan keamanan tingkat enterprise — langsung di browser Anda.',
-            heroCta: '✨ Mulai Sekarang',
+            heroCta: 'Mulai Sekarang',
             tips: [
-                { e: '🔑', t: 'Gunakan password unik', b: 'Setiap akun harus memiliki password berbeda.' },
-                { e: '📏', t: 'Minimal 16 karakter', b: 'Password lebih panjang secara dramatis meningkatkan keamanan.' },
-                { e: '🔀', t: 'Campur jenis karakter', b: 'Gunakan huruf besar, kecil, angka, dan simbol bersamaan.' },
-                { e: '🗝', t: 'Passphrase itu kuat', b: '"Apel-Langit-Biru-Gitar" lebih mudah diingat dan lebih aman.' },
-                { e: '🚫', t: 'Hindari info pribadi', b: 'Jangan gunakan nama, tanggal lahir, atau kata umum.' },
-                { e: '🔒', t: 'Aktifkan 2FA', b: 'Two-Factor Authentication menambah lapisan keamanan extra.' },
-                { e: '🗃', t: 'Pakai password manager', b: 'Bantu kamu menyimpan dan mengelola ribuan password unik.' },
-                { e: '🔄', t: 'Ganti password berkala', b: 'Ganti setidaknya setiap 6–12 bulan untuk akun penting.' }
+                { icon: 'key', t: 'Gunakan password unik', b: 'Setiap akun harus memiliki password berbeda.' },
+                { icon: 'ruler', t: 'Minimal 16 karakter', b: 'Password lebih panjang secara dramatis meningkatkan keamanan.' },
+                { icon: 'shuffle', t: 'Campur jenis karakter', b: 'Gunakan huruf besar, kecil, angka, dan simbol bersamaan.' },
+                { icon: 'key', t: 'Passphrase itu kuat', b: '"Apel-Langit-Biru-Gitar" lebih mudah diingat dan lebih aman.' },
+                { icon: 'prohibit', t: 'Hindari info pribadi', b: 'Jangan gunakan nama, tanggal lahir, atau kata umum.' },
+                { icon: 'lock', t: 'Aktifkan 2FA', b: 'Two-Factor Authentication menambah lapisan keamanan extra.' },
+                { icon: 'cabinet', t: 'Pakai password manager', b: 'Bantu kamu menyimpan dan mengelola ribuan password unik.' },
+                { icon: 'refresh', t: 'Ganti password berkala', b: 'Ganti setidaknya setiap 6–12 bulan untuk akun penting.' }
             ]
         }
     };
 
-    /* STORAGE MANAGERS */
+    /* STORAGE */
     function loadStorage() {
         try {
             const v = localStorage.getItem('raia_vault');
@@ -216,7 +245,7 @@
             const ca = localStorage.getItem('raia_cookie');
             if (ca === 'true') cookieAccepted = true;
             if (ca === 'false') cookieAccepted = false;
-        } catch (_) { /* ignore storage errors */ }
+        } catch (_) { /* ignore */ }
         updateStats();
         renderHist();
         renderVault();
@@ -228,41 +257,33 @@
         updateStats();
     }
 
-    function saveHistLS() {
-        localStorage.setItem('raia_hist', JSON.stringify(hist));
-    }
-
-    function saveGC() {
-        localStorage.setItem('raia_gc', genCount);
-    }
+    function saveHistLS() { localStorage.setItem('raia_hist', JSON.stringify(hist)); }
+    function saveGC() { localStorage.setItem('raia_gc', genCount); }
 
     function updateStats() {
         $('#statGen').textContent = genCount;
         $('#statSav').textContent = vault.length;
     }
 
-    /* COOKIE MANAGEMENT */
+    /* COOKIE */
     function handleCookieBanner() {
         const banner = $('#cookieBanner');
-        if (cookieAccepted === true || cookieAccepted === false) {
-            banner.classList.remove('show');
-        } else {
-            banner.classList.add('show');
-        }
+        if (cookieAccepted === true || cookieAccepted === false) banner.classList.remove('show');
+        else banner.classList.add('show');
     }
 
     function acceptCookies() {
         cookieAccepted = true;
         localStorage.setItem('raia_cookie', 'true');
         $('#cookieBanner').classList.remove('show');
-        notify('🍪 Cookie diterima');
+        notify('Cookies accepted');
     }
 
     function declineCookies() {
         cookieAccepted = false;
         localStorage.setItem('raia_cookie', 'false');
         $('#cookieBanner').classList.remove('show');
-        notify('🍪 Cookie ditolak');
+        notify('Cookies declined');
     }
 
     /* NOTIFICATIONS */
@@ -279,7 +300,7 @@
         notifTimer = setTimeout(() => el.classList.remove('show'), 2500);
     }
 
-    /* CRYPTO RANDOM GENERATOR */
+    /* CRYPTO RANDOM */
     function cryptoRandom(min, max) {
         const range = max - min + 1;
         const bytes = new Uint32Array(1);
@@ -287,7 +308,7 @@
         return min + Math.floor(bytes[0] / (0xffffffff + 1) * range);
     }
 
-    /* GENERATOR LOGIC */
+    /* GENERATOR */
     function getCharset() {
         let c = '';
         const checks = ['cU', 'cL', 'cN', 'cS', 'cSp'];
@@ -323,9 +344,7 @@
         const pool = filterChars(base);
         if (!pool.length) return '';
         let pw = '';
-        while (pw.length < len) {
-            pw += pool[cryptoRandom(0, pool.length - 1)];
-        }
+        while (pw.length < len) pw += pool[cryptoRandom(0, pool.length - 1)];
         return pw;
     }
 
@@ -337,9 +356,7 @@
             const pool = (i % 2 === 0) ? con : vow;
             pw += pool[cryptoRandom(0, pool.length - 1)];
         }
-        if ($('#cU') && $('#cU').checked) {
-            pw = pw.charAt(0).toUpperCase() + pw.slice(1);
-        }
+        if ($('#cU') && $('#cU').checked) pw = pw.charAt(0).toUpperCase() + pw.slice(1);
         if ($('#cN') && $('#cN').checked) {
             const p = cryptoRandom(0, pw.length - 2);
             pw = pw.slice(0, p) + cryptoRandom(0, 9) + pw.slice(p + 1);
@@ -388,7 +405,7 @@
         return '';
     }
 
-    /* STRENGTH ANALYSIS */
+    /* STRENGTH */
     function entropy(pw) {
         if (!pw.length) return 0;
         let p = 0;
@@ -445,7 +462,6 @@
         rfl.style.stroke = col;
     }
 
-    /* SET PASSWORD */
     function setPw(pw) {
         curPw = pw;
         const el = $('#pwt');
@@ -464,7 +480,7 @@
         }
     }
 
-    /* HISTORY ACTIONS */
+    /* HISTORY */
     function addHistory(pw) {
         const bits = entropy(pw);
         const score = scoreBits(bits);
@@ -509,7 +525,7 @@
         renderHist();
     }
 
-    /* ANALYZE PANEL */
+    /* ANALYZE */
     function analyzeInput(pw) {
         const res = $('#ares');
         if (!pw) { res.style.display = 'none'; return; }
@@ -545,7 +561,7 @@
           `).join('');
     }
 
-    /* VAULT FUNCTIONS */
+    /* VAULT */
     function useCurrentPw() { $('#vPw').value = curPw; }
 
     function saveVaultEntry() {
@@ -568,10 +584,10 @@
             el.innerHTML = `<div class="empty-state"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>${T('emptyV')}</span></div>`;
             return;
         }
-        const icons = ['🌐', '📱', '🏠', '🛒', '📧', '🎮', '💼', '🔐'];
+        const iconKeys = ['globe', 'phone', 'home', 'cart', 'mail', 'gamepad', 'briefcase', 'shield'];
         el.innerHTML = vault.map((v, i) => `
             <div class="vault-entry" data-index="${i}">
-              <div class="vico">${icons[i % icons.length]}</div>
+              <div class="vico">${ICONS[iconKeys[i % iconKeys.length]]}</div>
               <div class="vinfo">
                 <div class="site">${escapeHtml(v.site)}</div>
                 <div class="user">${escapeHtml(v.user) || '—'}</div>
@@ -614,7 +630,7 @@
     }
 
     function clearVault() {
-        if (confirm('Hapus semua entri vault?')) {
+        if (confirm('Delete all vault entries?')) {
             vault = [];
             saveVaultLS();
             renderVault();
@@ -625,9 +641,7 @@
     function exportCSV() {
         if (!vault.length) { notify('No data', true); return; }
         let csv = 'Website,Username,Password\n';
-        vault.forEach(v => {
-            csv += `"${v.site || ''}","${v.user || ''}","${v.pw || ''}"\n`;
-        });
+        vault.forEach(v => { csv += `"${v.site || ''}","${v.user || ''}","${v.pw || ''}"\n`; });
         const blob = new Blob([csv], { type: 'text/csv' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -637,13 +651,13 @@
         notify(T('nDL'));
     }
 
-    /* TIPS RENDER */
+    /* TIPS */
     function renderTips() {
         const tips = L10N[curLang].tips;
         if (!tips) return;
         $('#tiplist').innerHTML = tips.map(t => `
             <div class="tip-item">
-              <span class="ico">${t.e}</span>
+              <span class="ico">${ICONS[t.icon] || ''}</span>
               <div>
                 <div class="tit">${t.t}</div>
                 <div class="bod">${t.b}</div>
@@ -652,7 +666,7 @@
           `).join('');
     }
 
-    /* LANGUAGE MODAL & SWITCHING */
+    /* LANGUAGE */
     function buildLangGrid() {
         const keys = Object.keys(L10N);
         const html = keys.map(k => {
@@ -698,15 +712,14 @@
         setTimeout(() => $('#langSearch').focus(), 350);
     }
 
-    function closeLangModal() {
-        $('#langOverlay').classList.remove('open');
-    }
+    function closeLangModal() { $('#langOverlay').classList.remove('open'); }
 
     function applyLanguage() {
         const L = L10N[curLang];
         if (!L) return;
         document.documentElement.lang = curLang;
         document.documentElement.dir = (curLang === 'ar') ? 'rtl' : 'ltr';
+        localStorage.setItem('raia_lang', curLang);
         $('#curLangCode').textContent = L.code;
         $('#lblGen').textContent = L.gen;
         $('#lblSav').textContent = L.sav;
@@ -748,7 +761,8 @@
         $('#btnSaveV').textContent = L.btnSaveV;
         $('#heroTitle').textContent = L.heroTitle;
         $('#heroDesc').textContent = L.heroDesc;
-        document.querySelector('.hero-cta').textContent = L.heroCta;
+        const ctaSpan = document.querySelector('.hero-cta span');
+        if (ctaSpan) ctaSpan.textContent = L.heroCta;
         if (curPw) updateStrength(curPw);
         else $('#pwt').textContent = '—';
         renderHist();
@@ -758,15 +772,11 @@
         if (inp && inp.value) inp.dispatchEvent(new Event('input'));
     }
 
-    /* TAB NAVIGATION */
+    /* TABS */
     function switchTab(tabId) {
         const tabs = ['hist', 'ana', 'vault', 'tips'];
-        $$('.tab').forEach((btn, i) => {
-            btn.classList.toggle('on', tabs[i] === tabId);
-        });
-        $$('.tp').forEach(p => {
-            p.classList.toggle('on', p.id === 'tp-' + tabId);
-        });
+        $$('.tab').forEach((btn, i) => { btn.classList.toggle('on', tabs[i] === tabId); });
+        $$('.tp').forEach(p => { p.classList.toggle('on', p.id === 'tp-' + tabId); });
     }
 
     /* HELPERS */
@@ -822,18 +832,24 @@
     }
 
     function initSmoothScroll() {
-        document.querySelector('.hero-cta').addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector('#generator');
-            if (target) {
-                const y = target.getBoundingClientRect().top + window.scrollY - 80;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-        });
+        const cta = document.querySelector('.hero-cta');
+        if (cta) {
+            cta.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector('#generator');
+                if (target) {
+                    const y = target.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        }
     }
 
-    /* INITIALIZATION */
+    /* INIT */
     function init() {
+        const storedLang = localStorage.getItem('raia_lang');
+        if (storedLang && L10N[storedLang]) curLang = storedLang;
+
         loadStorage();
         initHeaderScroll();
         initHamburger();
@@ -920,6 +936,9 @@
 
         $('#acceptCookiesBtn').addEventListener('click', acceptCookies);
         $('#declineCookiesBtn').addEventListener('click', declineCookies);
+
+        const yearEl = $('#year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
 
         applyLanguage();
         setPw(generate());
