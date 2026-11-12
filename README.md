@@ -2,14 +2,14 @@
 
 # Raia Vault
 
-**A privacy-focused, client-side password generator, strength analyzer, and local credential vault**
+**A privacy-focused password generator, strength analyzer, and local credential vault that runs in your browser.**
 
-Generate, analyze, and locally store passwords — entirely in your browser.
+Create, check, and store passwords on your own device, with no account and no server.
 
 <br />
 
 <a href="https://raia-vault.haiere.workers.dev/">
-  <img src="https://img.shields.io/badge/Live_Demo-raia--vault.haiere.workers.dev-3B82F6?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Open Raia Vault" />
+  <img src="https://img.shields.io/badge/Live_Demo-raia--vault.haiere.workers.dev-3B82F6?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Open the Raia Vault live demo" />
 </a>
 <a href="https://buymeacoffee.com/hajirstudio">
   <img src="https://img.shields.io/badge/Support_the_Project-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Support Raia Vault on Buy Me a Coffee" />
@@ -17,8 +17,8 @@ Generate, analyze, and locally store passwords — entirely in your browser.
 
 <br />
 
-<img src="https://img.shields.io/badge/Version-1.2.3-blue?style=flat-square" alt="Version 1.2.3" />
-<img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" alt="Status active" />
+<img src="https://img.shields.io/badge/Version-1.2.4-blue?style=flat-square" alt="Version 1.2.4" />
+<img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" alt="Status: active" />
 <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT License" />
 
 <br />
@@ -26,230 +26,142 @@ Generate, analyze, and locally store passwords — entirely in your browser.
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
 <img src="https://img.shields.io/badge/JavaScript-Client_Side-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="Client-side JavaScript" />
+<img src="https://img.shields.io/badge/GSAP-3.12.5-88CE02?style=flat-square" alt="GSAP 3.12.5" />
 <img src="https://img.shields.io/badge/Privacy_First-Local_Processing-8B5CF6?style=flat-square" alt="Privacy-first local processing" />
 
 </div>
 
----
-
 > [!WARNING]
-> **Raia Vault currently stores vault data in browser `localStorage` without encryption.** Do not use it as a replacement for a professionally audited password manager when storing highly sensitive credentials.
+> Raia Vault stores vault data in browser `localStorage` without encryption. Do not use it as a replacement for a professionally audited password manager when you store highly sensitive credentials.
 
----
-
-<div align="center">
-
-### Table of Contents
-
-<table>
-<tr>
-<td valign="top" width="33%">
-
-**Getting Started**
+## Table of Contents
 
 - [Overview](#overview)
-- [What's New in v1.2.3](#whats-new-in-v123)
+- [What's New in v1.2.4](#whats-new-in-v124)
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-
-</td>
-<td valign="top" width="33%">
-
-**Reference**
-
 - [Privacy Model](#privacy-model)
 - [Security Considerations](#security-considerations)
 - [Limitations](#limitations)
 - [Troubleshooting](#troubleshooting)
-
-</td>
-<td valign="top" width="33%">
-
-**Community**
-
+- [Project Structure](#project-structure)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Development Setup](#development-setup)
 - [License](#license)
 - [Author and Support](#author-and-support)
 
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
 ## Overview
 
-> **Raia Vault** is a static web application that runs in a modern browser.
+Raia Vault is a static web application that runs in a modern browser. It includes four tools:
 
-It combines four main tools:
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-- A configurable password generator
+- A password generator with random, pronounceable, passphrase, and PIN modes
 - A real-time password strength analyzer
 - A local credential vault
-- A password history panel
+- A history panel for recently generated passwords
 
-</td>
-<td width="50%" valign="top">
+It is built for people who want a simple tool without mandatory accounts, cloud synchronization, or a third-party database. Password generation, analysis, and storage all happen in the browser.
 
-### Designed for
+## What's New in v1.2.4
 
-Users who want a simple, self-contained utility without:
+Released on 13 November 2026.
 
-- Mandatory accounts
-- Cloud synchronization
-- A third-party database
+### Structure and interface
 
-</td>
-</tr>
-</table>
+- Moved all interface text into `i18n.js`, which provides English (`en`) and Indonesian (`id`) strings.
+- Text is applied from `data-i18n` attributes in `index.html`, so new text can be added without changing the script logic.
+- Replaced the emoji flags and the emoji clock icon with inline SVG icons.
+- Refreshed spacing, typography, focus styles, and touch target sizes in `style.css`.
+- Added GSAP animations for the hero section, section reveals, and the tips list. Animations respect the reduced-motion preference.
 
----
+### Accessibility
 
-## What's New in v1.2.3
+- Added visible keyboard focus indicators.
+- Made all touch controls at least 44 by 44 pixels on touch devices.
+- Made the checkbox options reachable with the keyboard.
+- Made the language list usable with the keyboard, and added Escape to close the language dialog and the mobile menu.
+- Mode buttons now report their pressed state to assistive technology.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### Fixes
 
-### SEO & metadata
+- Fixed an initialization error in the language code that stopped the first password from being generated.
+- Error and status messages now explain what to do next, and they are translated.
+- Clipboard and share actions handle failures without breaking the page.
+- Storage access is wrapped in error handling, so the app still runs when browser storage is blocked.
 
-- Improved SEO metadata and page descriptions
-- Added `WebApplication`, `Organization`, and `FAQPage` structured data
-- Added Open Graph and Twitter Card metadata
-- Added a canonical URL
+### Compatibility
 
-### Interface
-
-- Added a non-intrusive floating donation button
-- Added a matching Buy Me a Coffee link in the footer
-- Added a hero feature list for clearer onboarding
-- Improved strength meter layout
-- Improved spacing, typography, and responsive behavior
-
-</td>
-<td width="50%" valign="top">
-
-### Structure & i18n
-
-- Separated the application into `index.html`, `style.css`, and `script.js`
-- Set English as the default interface language
-- Kept Indonesian language support available
-- Improved documentation and security notes
-- Updated the project version to `1.2.3`
-
-</td>
-</tr>
-</table>
-
----
+- Existing `localStorage` keys are unchanged, so saved vault entries, history, and language settings remain available after the update.
 
 ## Features
 
 ### Password Generator
 
-- Random character passwords
-- Pronounceable passwords
-- Passphrases
-- Numeric PINs
-- Configurable password length
-- Configurable character sets
-- Uppercase, lowercase, numbers, and symbol options
-- Cryptographically strong random values through the Web Crypto API when supported by the browser
+- **Random:** letters, numbers, and symbols, with a length from 4 to 128 characters.
+- **Pronounceable:** alternating consonants and vowels, with optional uppercase and number options.
+- **Passphrase:** 3 to 12 words from a built-in list of 50 words, with a custom separator, optional number, and optional capitalization.
+- **PIN:** 4 to 12 digits, with options to avoid repeated digits and digit sequences.
+- **Random options:** avoid look-alike characters (`O`, `0`, `l`, `1`, `I`, `|`), avoid brackets and similar punctuation, and hide the generated password on screen.
+- Random values come from `window.crypto.getRandomValues()`.
 
 ### Password Strength Analysis
 
-- Real-time strength rating
-- Entropy estimate
-- Crack-time estimate
-- Password length
-- Unique character count
-- Character distribution
-- Uppercase, lowercase, number, and symbol counts
-- Visual strength indicator
+- Strength rating on a five-level scale
+- Entropy estimate in bits, based on the character set used
+- Estimated time to crack, assuming 10 billion guesses per second
+- Password length and unique character count
+- Character distribution for uppercase letters, lowercase letters, numbers, and symbols
 
 ### Local Vault
 
-- Store website names
-- Store usernames
-- Store passwords
-- View saved entries
-- Copy saved credentials
-- Delete vault entries
-- Store data locally in the browser using `localStorage`
+- Save a website or app name, a username or email, and a password
+- Reveal or hide saved passwords by selecting an entry
+- Copy a saved password
+- Delete a single entry or clear all entries
+- Store entries in the browser's `localStorage`
 
 ### History
 
-- Keep the latest 20 generated passwords
-- Store generation timestamps
-- Store strength scores
-- Copy a previous generated password
-- Load a history item into the generator display
+- Keep the latest 20 generated passwords, with the time of generation and a strength indicator
+- Select a history item to show it in the generator and copy it
+- Clear the history
 
 ### Export
 
-- Export vault entries as CSV
-- Use exported data for backup or migration
-- Generate files directly in the browser
+- Export vault entries as a CSV file with `Website`, `Username`, and `Password` columns
+- The file is created in the browser and downloaded directly
 
 ### Interface
 
-- English and Indonesian languages
-- Responsive desktop and mobile layout
-- Keyboard-friendly controls
-- Optional donation support
-- No required account
-- No required backend service
-
----
+- English and Indonesian interface languages, with the selected language saved in the browser
+- Responsive layout for desktop and mobile screens
+- Keyboard navigation for the main controls
+- Reduced-motion support
+- Optional donation button and footer link
 
 ## Requirements
 
-> Raia Vault requires:
-
 | Requirement | Details |
 |---|---|
-| **Browser** | A modern web browser with JavaScript enabled |
-| **Storage** | Permission to use browser storage |
-| **Crypto** | A browser with support for the Web Crypto API |
+| **Browser** | A modern browser with JavaScript enabled |
+| **Storage** | `localStorage` must be available and not blocked |
+| **Crypto** | Web Crypto API (`window.crypto.getRandomValues()`) |
+| **Network** | Fonts, the GSAP library, and the logo image are loaded from external servers on the first visit |
 
-**Recommended browsers:**
-
-Google Chrome · Mozilla Firefox · Microsoft Edge · Apple Safari · Other modern Chromium-, Gecko-, or WebKit-based browsers
+Recommended browsers: current versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari.
 
 > [!NOTE]
-> An internet connection may be required during the first page load if the application loads web fonts or other external resources. After the page and required resources have been cached, the core application may continue to work offline.
-
----
+> The generator and the vault do not depend on the external fonts, the animation library, or the logo image. Without them, the interface uses fallback fonts and shows no animations.
 
 ## Installation
 
-> Raia Vault is a static web application made up of three primary files.
+### Use the Hosted Version
 
-```text
-index.html
-style.css
-script.js
-```
+Open [raia-vault.haiere.workers.dev](https://raia-vault.haiere.workers.dev/) in your browser.
 
-Use the Hosted Version
-
-<div align="center">
-
-raia-vault.haiere.workers.dev
-
-</div>
-
-Run Locally
+### Run Locally
 
 Clone the repository:
 
@@ -258,599 +170,363 @@ git clone https://github.com/haiere/raia-vault.git
 cd raia-vault
 ```
 
-You can open index.html directly in a browser, or use a local static server:
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-Python
+Open `index.html` directly in your browser, or serve the folder with a local static server:
 
 ```bash
+# Python
 python -m http.server 8000
-```
 
-</td>
-<td width="33%" valign="top">
-
-Node.js
-
-```bash
+# Node.js
 npx serve .
-```
 
-</td>
-<td width="33%" valign="top">
-
-PHP
-
-```bash
+# PHP
 php -S localhost:8000
 ```
 
-</td>
-</tr>
-</table>
+Then open `http://localhost:8000`.
 
-Then open:
+Raia Vault has no build step, no package manager dependencies, and no environment variables.
 
-```text
-http://localhost:8000
-```
+> [!NOTE]
+> Keep `index.html`, `style.css`, `script.js`, and `i18n.js` in the same directory. `i18n.js` must load before `script.js`, which `index.html` already does.
 
-[!NOTE]
-Keep index.html, style.css, and script.js in the same directory unless you update the file paths in the HTML document.
+## Usage
 
----
+### Generate a Password
 
-Usage
+1. Open the **Generator** section.
+2. Choose a mode: Random, Pronounceable, Passphrase, or PIN.
+3. Adjust the length, word count, PIN length, or character options.
+4. Select **Generate password**.
+5. Review the password and its strength rating.
+6. Use the copy button, or select **Save** to send the password to the vault form.
 
-Generate a Password
+### Analyze a Password
 
-1. Open the Generator tab
-2. Choose one of the available modes:
-   · Random
-   · Pronounceable
-   · Passphrase
-   · PIN
-3. Adjust the length, word count, or character options
-4. Click Generate Password
-5. Review the generated password and strength information
-6. Use the copy button or save the password to the vault
+1. Open the **Analyze** tab.
+2. Enter or paste a password into the field.
+3. Review the strength rating, entropy estimate, length, unique character count, estimated crack time, and character distribution.
 
-Analyze a Password
+> [!WARNING]
+> Avoid entering real credentials on public or shared devices.
 
-1. Open the Analyze tab
-2. Enter or paste a password into the analysis field
-3. Review the displayed information:
-   · Strength rating
-   · Estimated entropy
-   · Password length
-   · Unique character count
-   · Estimated crack time
-   · Character distribution
+### Save an Entry to the Vault
 
-[!WARNING]
-Avoid entering real credentials into public or shared devices.
+1. Open the **Vault** tab.
+2. Enter a website or app name. This field is required.
+3. Enter a username or email address. This field is optional.
+4. Enter a password. This field is required.
+5. Select **Save to vault**.
 
-Save an Entry to the Vault
+Selecting **Save** next to a generated password fills the password field and opens the Vault tab.
 
-1. Open the vault interface
-2. Enter the website or service name
-3. Enter the username or email address
-4. Enter the password
-5. Click Save to Vault
-6. Review the saved entry in the vault list
+### Manage Vault Entries
 
-[!TIP]
-You can also use the save action next to a generated password to fill the vault form automatically.
+- Select an entry, or its eye button, to reveal the password. Select it again to hide it.
+- Select the copy button on an entry to copy its password.
+- Select the delete button on an entry to remove it.
+- Select **Clear** to remove all entries. The app asks for confirmation first.
 
-Manage Vault Entries
+### Export Vault Data
 
-Available actions may include:
+1. Open the **Vault** tab.
+2. Check that the entries are correct.
+3. Select **CSV**.
+4. Store the downloaded file securely.
+5. Delete the file when you no longer need it.
 
-· View an entry
-· Copy a username
-· Copy a password
-· Delete an entry
-· Export vault entries as CSV
+> [!WARNING]
+> A CSV export contains plaintext passwords. Treat the file as sensitive.
 
-Export Vault Data
+### Use the History
 
-1. Open the vault tab
-2. Confirm that the entries are correct
-3. Click the CSV or Export button
-4. Save the generated file securely
-5. Delete the exported CSV after use if it is no longer needed
+1. Open the **History** tab.
+2. Select a recent password to show it in the generator and copy it to the clipboard.
+3. Select **Clear all** to remove the history, especially on a shared device.
 
-[!WARNING]
-A CSV export contains plaintext credential data and should be treated as sensitive.
+### Change the Language
 
-Use Password History
+1. Select the language button in the header.
+2. Choose English or Indonesian. You can search by language name or code.
 
-1. Open the History tab
-2. Select one of the recent generated passwords
-3. Copy it to the clipboard or load it into the generator display
-4. Remove history entries if the browser is shared or publicly accessible
+The selected language is saved in the browser for future visits.
 
-Change Language
+### Support the Project
 
-1. Click the language or globe button
-2. Select English or Indonesian
-3. The selected language is saved for future visits when browser storage is available
+You can support Raia Vault through the floating **Donate** button or the **Buy me a coffee** link in the footer. Donations are optional and do not change how the application works.
 
-Support the Project
+## Privacy Model
 
-You can support Raia Vault through:
+Raia Vault processes passwords and vault data in the browser. The application code does not include analytics or telemetry, and no account is required for the core features.
 
-· The floating Donate button
-· The Buy Me a Coffee link in the footer
-· The project repository and issue tracker
+The following data is stored in the browser's `localStorage` for the site's origin:
 
-Donation support is optional and does not affect application functionality.
+| Key | Contents |
+|---|---|
+| `raia_vault` | Vault entries |
+| `raia_hist` | Password history |
+| `raia_gc` | Count of generated passwords |
+| `raia_cookie` | Your choice in the cookie notice |
+| `raia_lang` | Selected interface language |
 
----
+The page also makes requests to external servers:
 
-Privacy Model
+- Google Fonts, for the typefaces
+- cdnjs, for the GSAP animation library
+- `i.postimg.cc`, for the logo image
+- Buy Me a Coffee, only when you select a donation link
 
-Raia Vault is designed to process passwords and vault data locally in the browser.
+Clearing site data, using private browsing, changing browser profiles, or using storage-cleaning extensions can delete vault entries and history.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### Self-Hosting for Full Local Use
 
-During normal use
+1. Download the Google Fonts files, GSAP, and the logo image.
+2. Store them in the project folder.
+3. Replace the external URLs in `index.html` and `style.css` with local paths.
+4. Serve the project from a local web server.
+5. Test the application with the network disabled.
 
-· Password generation occurs in the browser
-· Strength analysis occurs in the browser
-· Vault entries are stored in browser localStorage
-· Password history is stored locally when enabled by the application
-· CSV files are generated in the browser
-· No vault API or remote database is required
-· No analytics or telemetry is intentionally used by the application
-· No account is required for the core features
+## Security Considerations
 
-</td>
-<td width="50%" valign="top">
+### Local Storage Is Not Encrypted
 
-External resources
+Vault entries are stored in `localStorage` as plain text. Any script that runs on the same origin can read them. Browser extensions and malware can also read local browser data, depending on their permissions.
 
-The hosted version may load external resources such as:
+Do not store highly sensitive credentials in the current version unless you understand and accept this risk.
 
-· Google Fonts
-· CDN-hosted libraries, if configured by the deployment
-· Other resources explicitly included in the HTML file
+### Device Security Matters
 
-</td>
-</tr>
-</table>
+Local-only processing does not protect your data from:
 
-Fully self-contained offline deployment
-
-1. Download external dependencies
-2. Store them locally
-3. Replace external URLs with local file paths
-4. Serve the project from a local web server
-5. Test it with the internet disabled
-
-Browser Storage
-
-Data stored in localStorage is associated with the website origin.
-
-[!NOTE]
-Clearing site data, using private browsing, changing browser profiles, or using storage-cleaning extensions may delete vault entries and password history.
-
----
-
-Security Considerations
-
-Local Storage Is Not Encrypted
-
-Raia Vault currently stores vault data in browser localStorage.
-
-[!WARNING]
-localStorage should not be treated as an encrypted password database. Any script that executes in the same origin may potentially access stored values, and browser extensions or malware may also access local browser data depending on their permissions.
-
-Do not use the current version to store highly sensitive credentials unless you understand and accept this risk.
-
-Device Security Matters
-
-Local-only processing does not protect data from:
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-· Malware
-· Browser extensions with excessive permissions
-· Other users with access to the device
-· Compromised browser profiles
-
-</td>
-<td width="50%" valign="top">
-
-· Screen recording or clipboard monitoring
-· Operating-system-level compromise
-· Malicious code introduced through a compromised deployment
-
-</td>
-</tr>
-</table>
+- Malware
+- Browser extensions with broad permissions
+- Other people with access to the device
+- Compromised browser profiles
+- Screen recording or clipboard monitoring
+- Operating-system-level compromise
+- Malicious code introduced through a compromised deployment
 
 Use a trusted device, keep your browser updated, and protect your operating-system account.
 
-Password Generation
+### Password Generation
 
-The password generator is designed to use crypto.getRandomValues() for cryptographically strong random values when the browser supports the Web Crypto API.
+Passwords are generated with `window.crypto.getRandomValues()`. Do not replace it with `Math.random()`, which is not suitable for generating passwords.
 
-[!IMPORTANT]
-Do not replace cryptographic randomness with Math.random() for password generation.
+### Clipboard Handling
 
-Clipboard Handling
+Copied passwords can remain in the system clipboard until another application replaces them. Avoid copying credentials on shared devices, and clear the clipboard when you finish.
 
-Copied passwords may remain available in the system clipboard until another application replaces them.
+### CSV Export
 
-Avoid copying credentials on shared devices, and clear the clipboard when appropriate.
+CSV exports contain plaintext passwords. Store exported files securely, do not upload them to public services, and delete them when they are no longer needed.
 
-CSV Export
+### Deployment Security
 
-CSV exports contain plaintext credentials.
+When you host Raia Vault publicly:
 
-Store exported files securely, avoid uploading them to public services, and delete them when they are no longer required.
+- Use HTTPS.
+- Keep dependencies updated.
+- Protect the deployment pipeline.
+- Avoid inserting untrusted HTML.
+- Use a restrictive Content Security Policy where practical.
+- Never place API keys, private tokens, or deployment secrets in client-side files.
 
-Deployment Security
+> [!IMPORTANT]
+> Client-side JavaScript cannot keep secrets confidential, because the browser receives it.
 
-When hosting Raia Vault publicly:
+## Limitations
 
-· Use HTTPS
-· Keep dependencies updated
-· Protect the deployment pipeline
-· Avoid inserting untrusted HTML
-· Configure a restrictive Content Security Policy where practical
-· Never hardcode API keys, private tokens, or deployment secrets in client-side files
+**Storage and security**
 
-[!WARNING]
-Client-side JavaScript cannot keep secrets confidential because it is delivered to the browser.
+- Vault data is not encrypted.
+- There is no master password.
+- There is no synchronization between devices, and no automatic cloud backup.
+- CSV exports contain plaintext passwords.
+- Browser storage can be cleared or lost.
+- The application cannot protect a compromised device.
 
----
+**Analysis and environment**
 
-Limitations
+- Strength ratings and entropy values are estimates, not guarantees.
+- The estimated crack time depends on assumptions and is not an exact prediction.
+- Browser extensions may be able to read page content and storage.
+- Some features depend on the external resources listed in [Privacy Model](#privacy-model).
 
-The current version has several important limitations.
+> [!NOTE]
+> For production credential management, use a dedicated password manager with encryption, an audited cryptographic design, secure synchronization, and account recovery.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+## Troubleshooting
 
-Storage & security
+### The generated password does not appear
 
-· Vault data is not encrypted
-· There is no master password
-· There is no end-to-end encrypted synchronization
-· There is no secure multi-device vault synchronization
-· There is no automatic cloud backup
-· CSV export contains plaintext credentials
-· Browser storage can be cleared or lost
-· The application cannot protect against a compromised device
+- Check that JavaScript is enabled.
+- Wait until the page finishes loading.
+- Check that no extension is blocking scripts.
+- Open the browser console and look for runtime errors.
 
-</td>
-<td width="50%" valign="top">
+### Vault entries are missing
 
-Analysis & environment
+- Browser site data may have been cleared.
+- Private browsing sessions do not keep data after the window closes.
+- A storage-cleaning extension may have removed the data.
+- The site address (origin) may have changed, which creates separate storage.
+- The browser profile may have changed.
+- The storage quota for the site may have been exceeded.
 
-· Password strength estimates are approximations, not guarantees
-· Estimated crack time depends on assumptions and should not be treated as an exact prediction
-· Browser extensions may be able to access page content or storage
-· Offline operation depends on cached files and external resources being available locally
+### CSV export does not start
 
-</td>
-</tr>
-</table>
+- Check that at least one vault entry exists.
+- Check that the browser allows downloads from the site.
+- Check whether a privacy extension is blocking the download.
 
-[!NOTE]
-For production credential management, consider a dedicated password manager with encryption, audited cryptographic design, secure synchronization, and recovery mechanisms.
+### Strength analysis does not update
 
----
+- Check that a password is entered in the Analyze field.
+- Check that JavaScript is enabled.
+- Check the browser console for errors.
 
-Troubleshooting
+### The language does not change
 
-<details>
-<summary><b>Generated password is not visible</b></summary>
+1. Select the language again.
+2. Refresh the page.
+3. Check that browser storage is enabled.
+4. If the interface is stuck, clear only this site's stored data. This also removes vault entries, so export them first.
+5. Test in a current browser with no restrictive extensions.
 
-<br />
+### The page looks different when offline
 
-Check that:
+Fonts, the animation library, and the logo image load from external servers. Without them, the page uses fallback fonts, shows no animations, and may show a broken logo. To work fully offline, follow the steps in [Self-Hosting for Full Local Use](#self-hosting-for-full-local-use).
 
-· JavaScript is enabled
-· The page has finished loading
-· The browser supports the required APIs
-· No browser extension is blocking scripts
-· The browser console does not show a runtime error
+## Project Structure
 
-</details>
+```text
+raia-vault/
+├── index.html   Page structure, metadata, and structured data
+├── style.css    Design tokens, layout, components, and responsive rules
+├── script.js    Generator, strength analysis, history, vault, and animations
+├── i18n.js      English and Indonesian interface strings
+├── README.md    Project documentation
+└── LICENSE      MIT License text
+```
 
-<details>
-<summary><b>Vault entries disappeared</b></summary>
+## Roadmap
 
-<br />
+Possible future improvements:
 
-Possible causes include:
+**Security and storage**
 
-· Browser site data was cleared
-· Private browsing mode was used
-· A storage-cleaning extension removed the data
-· The site origin changed
-· The browser profile was changed
-· The application storage quota was exceeded
+- Encrypted vault storage with a master password
+- Authenticated encryption for stored entries
+- Local encrypted backup and restore
+- Optional passkey or WebAuthn integration
+- Automatic clipboard clearing
 
-</details>
+**Features and interface**
 
-<details>
-<summary><b>CSV export does not work</b></summary>
+- Secure import, including CSV import with validation
+- Migration support for common password manager formats
+- Additional password generation modes
+- More detailed explanations of password strength
+- Additional languages
+- Light and dark theme switching
+- Improved accessibility testing
+- Automated tests for security and browser compatibility
 
-<br />
+> [!IMPORTANT]
+> Design and review any encryption feature carefully before using it with real credentials.
 
-Check that:
+## Contributing
 
-· At least one vault entry exists
-· The browser allows file downloads
-· The download was not blocked
-· The browser supports Blob URLs
-· No privacy extension is blocking downloads
+Contributions are welcome. Helpful areas include:
 
-</details>
+- New password generation modes
+- Better password strength analysis
+- Accessibility improvements
+- Mobile layout improvements
+- Translations and localization fixes
+- Tests
+- Browser compatibility
+- Review of security-sensitive code
+- Documentation
 
-<details>
-<summary><b>Strength analysis does not update</b></summary>
+### Contribution Workflow
 
-<br />
-
-Check that:
-
-· A password has been entered in the analysis field
-· JavaScript is enabled
-· The page is not displaying a runtime error
-· The input is not being blocked by a browser extension
-
-</details>
-
-<details>
-<summary><b>Language does not change</b></summary>
-
-<br />
-
-1. Select the language again
-2. Refresh the page
-3. Check whether browser storage is enabled
-4. Clear only the site's cached data if the interface is stuck
-5. Test in a modern browser without restrictive extensions
-
-</details>
-
-<details>
-<summary><b>Offline mode does not work</b></summary>
-
-<br />
-
-The application may need to load fonts or dependencies during the first visit.
-
-To improve offline reliability:
-
-1. Load the application while online
-2. Wait until all resources finish loading
-3. Visit the application again
-4. Test it with the internet disconnected
-5. Self-host external resources for a fully local deployment
-
-</details>
-
----
-
-Roadmap
-
-Potential future improvements include:
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-Security & storage
-
-· Encrypted vault storage using a master password
-· Authenticated encryption for stored entries
-· Local encrypted backup and restore
-· Optional passkey or WebAuthn integration
-· Automatic clipboard clearing
-
-</td>
-<td width="50%" valign="top">
-
-Features & i18n
-
-· Secure import functionality
-· CSV import with validation
-· Migration support for common password manager formats
-· Additional password generation modes
-· More detailed password-strength explanations
-· Additional languages
-· Dark and light theme switching
-· Improved accessibility
-· Automated security and browser compatibility testing
-
-</td>
-</tr>
-</table>
-
-[!IMPORTANT]
-Any encryption feature should be designed and reviewed carefully before being used for real credentials.
-
----
-
-Contributing
-
-Contributions are welcome.
-
-Areas for contribution
-
-· Adding password generation modes
-· Improving password-strength analysis
-· Improving accessibility
-· Improving mobile responsiveness
-· Improving localization
-· Adding tests
-· Improving browser compatibility
-· Reviewing security-sensitive code
-· Improving documentation
-
-Contribution Workflow
-
-1. Fork the repository
+1. Fork the repository.
 2. Create a feature branch:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
-3. Make your changes
-4. Test the application locally
-5. Review changes involving passwords, storage, clipboard access, and exports carefully
+
+3. Make your changes.
+4. Test the application locally.
+5. Review changes that affect passwords, storage, clipboard access, or exports with extra care.
 6. Commit your changes:
+
    ```bash
    git commit -m "Describe your change"
    ```
+
 7. Push the branch:
+
    ```bash
    git push origin feature/your-feature-name
    ```
-8. Open a pull request
 
-[!IMPORTANT]
-Before contributing, preserve the client-side and privacy-focused architecture of the project.
+8. Open a pull request.
 
-Do not commit
+> [!IMPORTANT]
+> Keep the client-side and privacy-focused design of the project. Do not add a server, analytics, or remote storage without discussing it first.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### Do Not Commit
 
-· Real passwords
-· API keys
-· Access tokens
-· Private URLs
+- Real passwords, API keys, access tokens, or private URLs
+- Personal vault exports
+- Screenshots that show credentials
+- Test fixtures that contain real user data
 
-</td>
-<td width="50%" valign="top">
+## Development Setup
 
-· Personal vault exports
-· Screenshots containing credentials
-· Test fixtures containing real user data
+Raia Vault is a static application. You need a text editor and a local static server.
 
-</td>
-</tr>
-</table>
+1. Clone the repository.
+2. Open the project folder.
+3. Start a local static server, for example `python -m http.server 8000`.
+4. Open `http://localhost:8000` in a browser.
 
----
+### Development Checklist
 
-Development Setup
+Before you submit changes, test:
 
-Raia Vault is a static application with three primary files.
+- [ ] Random, pronounceable, passphrase, and PIN generation
+- [ ] Strength analysis
+- [ ] Saving, viewing, copying, and deleting vault entries
+- [ ] Clearing the vault
+- [ ] CSV export
+- [ ] Password history
+- [ ] Language switching, and that the choice is kept after reload
+- [ ] Cookie notice behavior
+- [ ] Mobile layout
+- [ ] Keyboard navigation and focus indicators
+- [ ] Reduced-motion behavior
+- [ ] Behavior when browser storage is blocked
+- [ ] Error and status messages
 
-```text
-index.html
-style.css
-script.js
-```
+## License
 
-Local Development
+Raia Vault is released under the MIT License. See the [LICENSE](LICENSE) file for the full text.
 
-1. Clone the repository
-2. Open the project directory
-3. Start a local static server
-4. Open the local URL in a browser
-5. Test generation, analysis, vault storage, history, export, language switching, and responsive behavior
+## Author and Support
 
-Example:
+Developed and maintained by Haiere and HajirStudio.
 
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
-
-Development Checklist
-
-Before submitting changes, test:
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-☐ Random password generation
-☐ Pronounceable password generation
-☐ Passphrase generation
-☐ PIN generation
-☐ Strength analysis
-☐ Vault saving
-☐ Vault viewing
-☐ Vault deletion
-☐ Clipboard copying
-☐ CSV export
-
-</td>
-<td width="50%" valign="top">
-
-☐ Password history
-☐ Language switching
-☐ Browser reload behavior
-☐ Storage-clearing behavior
-☐ Mobile layout
-☐ Keyboard navigation
-☐ Reduced-motion preferences
-☐ Offline behavior
-☐ Error handling
-
-</td>
-</tr>
-</table>
-
----
-
-License
-
-Raia Vault is released under the MIT License.
-
-See the LICENSE file for the complete license text.
-
----
-
-Author and Support
+| Channel | Purpose |
+|---|---|
+| Bug reports and feature requests | Use the project issue tracker |
+| Security concerns | Contact the maintainers through the repository |
+| Support the project | [Buy me a coffee](https://buymeacoffee.com/hajirstudio) |
 
 <div align="center">
-
-Developed and maintained by Haiere and HajirStudio
-
-<br />
-
-Channel Purpose
-Bug reports & feature requests Please use the project issue tracker
-Security concerns Contact the project maintainers through the repository
-Support the project Buy me a coffee
-
-<br />
-
-<a href="https://buymeacoffee.com/hajirstudio">
-  <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy Me a Coffee" />
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-Built with privacy in mind and designed to run locally in your browser.
 
 <br />
 
@@ -864,8 +540,6 @@ Built with privacy in mind and designed to run locally in your browser.
 <br />
 <br />
 
-<sub>
-Last updated: September 2026 · Raia Vault v1.2.3
-</sub>
+<sub>Last updated: 13 November 2026 · Raia Vault v1.2.4</sub>
 
 </div>

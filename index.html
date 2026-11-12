@@ -8,8 +8,8 @@
     <meta name="theme-color" content="#020617" />
     <meta name="format-detection" content="telephone=no" />
 
-    <title>Raia Vault — Free Strong Password Generator &amp; Secure Vault Manager</title>
-    <meta name="description" content="Raia Vault is a free, browser-based password manager. Generate strong random passwords, pronounceable passwords, passphrases and PINs, analyze password strength in real time, and store credentials in a private vault. No sign-up, no tracking, 100% client-side." />
+    <title>Raia Vault: Free Strong Password Generator and Secure Vault Manager</title>
+    <meta name="description" content="Raia Vault is a free, browser-based password manager. Generate strong random passwords, pronounceable passwords, passphrases, and PINs, check password strength in real time, and store credentials in a private vault. No sign-up, no tracking, 100% client-side." />
     <meta name="keywords" content="password generator, strong password generator, random password generator, passphrase generator, PIN generator, password manager, free password vault, password strength checker, entropy calculator, secure password, data manager, cybersecurity, privacy tool, Raia Vault, Haiere" />
     <meta name="author" content="Haiere" />
     <meta name="publisher" content="Haiere" />
@@ -22,24 +22,24 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raia Vault" />
     <meta property="og:url" content="https://raia-vault.haiere.workers.dev/" />
-    <meta property="og:title" content="Raia Vault — Free Strong Password Generator &amp; Secure Vault Manager" />
-    <meta property="og:description" content="Generate, store and analyze passwords with enterprise-grade security — directly in your browser. Free forever, no sign-up required." />
+    <meta property="og:title" content="Raia Vault: Free Strong Password Generator and Secure Vault Manager" />
+    <meta property="og:description" content="Generate, store, and check passwords with strong security, right in your browser. Free, with no sign-up required." />
     <meta property="og:image" content="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
     <meta property="og:image:secure_url" content="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Raia Vault — secure password manager preview" />
+    <meta property="og:image:alt" content="Raia Vault secure password manager preview" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="id_ID" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@haiere" />
     <meta name="twitter:creator" content="@haiere" />
-    <meta name="twitter:title" content="Raia Vault — Free Strong Password Generator &amp; Secure Vault Manager" />
-    <meta name="twitter:description" content="Generate, store and analyze passwords with enterprise-grade security — directly in your browser." />
+    <meta name="twitter:title" content="Raia Vault: Free Strong Password Generator and Secure Vault Manager" />
+    <meta name="twitter:description" content="Generate, store, and check passwords right in your browser." />
     <meta name="twitter:image" content="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
-    <meta name="twitter:image:alt" content="Raia Vault — secure password manager preview" />
+    <meta name="twitter:image:alt" content="Raia Vault secure password manager preview" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -55,6 +55,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://i.postimg.cc" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="dns-prefetch" href="https://buymeacoffee.com" />
     <link rel="preload" as="image" href="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" fetchpriority="high" />
 
@@ -70,8 +71,8 @@
           "url": "https://raia-vault.haiere.workers.dev/",
           "name": "Raia Vault",
           "alternateName": "Raia Vault Password Manager",
-          "description": "Free browser-based password generator, strength analyzer and secure vault manager.",
-          "inLanguage": "en",
+          "description": "Free browser-based password generator, strength analyzer, and secure vault manager.",
+          "inLanguage": ["en", "id"],
           "publisher": { "@id": "https://raia-vault.haiere.workers.dev/#organization" }
         },
         {
@@ -97,7 +98,8 @@
           "applicationSubCategory": "Password Manager",
           "operatingSystem": "All",
           "browserRequirements": "Requires a modern browser with JavaScript and Web Crypto API enabled",
-          "softwareVersion": "1.2.3",
+          "softwareVersion": "1.2.4",
+          "dateModified": "2026-11-13",
           "isAccessibleForFree": true,
           "inLanguage": ["en", "id"],
           "featureList": [
@@ -106,7 +108,7 @@
             "Passphrase generator with custom separator",
             "PIN generator with no-repeat and no-sequence rules",
             "Real-time entropy and crack-time estimation",
-            "Local encrypted-style vault with CSV export",
+            "Local vault with CSV export",
             "Multi-language interface"
           ],
           "offers": {
@@ -134,7 +136,7 @@
               "name": "Is Raia Vault free to use?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Raia Vault is completely free with no account, subscription or hidden limits. Every tool runs directly in your browser."
+                "text": "Yes. Raia Vault is completely free with no account, subscription, or hidden limits. Every tool runs directly in your browser."
               }
             },
             {
@@ -172,7 +174,7 @@
 <body>
     <header class="header" id="mainHeader" role="banner">
         <div class="header-inner">
-            <a href="#" class="brand" aria-label="Raia Vault home">
+            <a href="#" class="brand" data-i18n-aria="ariaHome" aria-label="Raia Vault home">
                 <div class="brand-logo">
                     <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="Haiere logo" width="40" height="40" loading="eager" decoding="async" fetchpriority="high" />
                 </div>
@@ -183,23 +185,23 @@
             </a>
 
             <div class="header-right">
-                <div class="header-stats" aria-label="Vault statistics">
+                <div class="header-stats" data-i18n-aria="ariaStats" aria-label="Vault statistics">
                     <div class="header-stat">
                         <span class="num" id="statGen">0</span>
-                        <span class="lbl" id="lblGen">Generated</span>
+                        <span class="lbl" id="lblGen" data-i18n="gen">Generated</span>
                     </div>
                     <div class="header-stat">
                         <span class="num" id="statSav">0</span>
-                        <span class="lbl" id="lblSav">Saved</span>
+                        <span class="lbl" id="lblSav" data-i18n="sav">Saved</span>
                     </div>
                 </div>
 
-                <button class="lang-toggle" id="openLangBtn" type="button" aria-label="Change language">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <button class="lang-toggle" id="openLangBtn" type="button" data-i18n-aria="ariaLangBtn" aria-label="Change language">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     <span class="lang-lbl" id="curLangCode">EN</span>
                 </button>
 
-                <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+                <button class="hamburger" id="hamburgerBtn" type="button" data-i18n-aria="ariaNavBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -208,19 +210,24 @@
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
         <a class="mobile-link" href="#generator">
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Generator
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <span data-i18n="navGen">Generator</span>
         </a>
         <a class="mobile-link" href="#history">
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span> History
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
+            <span data-i18n="navHist">History</span>
         </a>
         <a class="mobile-link" href="#analyze">
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span> Analyze
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
+            <span data-i18n="navAna">Analyze</span>
         </a>
         <a class="mobile-link" href="#vault">
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="8" x2="12" y2="12"/></svg></span> Vault
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="8" x2="12" y2="12"/></svg></span>
+            <span data-i18n="navVault">Vault</span>
         </a>
         <a class="mobile-link" href="#tips">
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span> Tips
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+            <span data-i18n="navTips">Tips</span>
         </a>
     </nav>
 
@@ -229,16 +236,16 @@
         <div class="lang-panel">
             <div class="lang-head">
                 <div class="title">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                    <h2 id="modalLangTitle">Select Language</h2>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <h2 id="modalLangTitle" data-i18n="langTitle">Select language</h2>
                 </div>
-                <button class="lang-close" id="langClose" type="button" aria-label="Close language dialog">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <button class="lang-close" id="langClose" type="button" data-i18n-aria="ariaLangClose" aria-label="Close language dialog">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="lang-search-wrap">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input class="lang-search" id="langSearch" type="text" placeholder="Search language…" autocomplete="off" aria-label="Search language" />
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input class="lang-search" id="langSearch" type="text" data-i18n-placeholder="langSearch" placeholder="Search language…" autocomplete="off" aria-label="Search language" />
             </div>
             <div class="lang-grid" id="langGrid"></div>
         </div>
@@ -246,126 +253,126 @@
 
     <main class="main-wrap" id="mainContent">
         <section class="hero" aria-labelledby="heroTitle">
-            <h1 id="heroTitle">Raia Vault</h1>
-            <p id="heroDesc">Generate, store, and analyze passwords with enterprise-grade security — right in your browser.</p>
+            <h1 id="heroTitle" data-i18n="heroTitle">Raia Vault</h1>
+            <p id="heroDesc" data-i18n="heroDesc">Create strong passwords, store them safely, and check how strong they are, all right in your browser.</p>
             <a class="hero-cta" href="#generator">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                <span>Get Started</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span data-i18n="heroCta">Get started</span>
             </a>
             <ul class="hero-features" aria-label="Key features">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 100% client-side</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> No sign-up</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Crypto-random</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="featClient">Runs fully in your browser</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="featSignup">No sign-up</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="featRandom">Secure random numbers</span></li>
             </ul>
         </section>
 
         <section class="glass-card" id="generator" aria-labelledby="cardHtGen">
             <div class="glass-card-header">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                <span class="title" id="cardHtGen">Generator</span>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <h2 class="title" id="cardHtGen" data-i18n="cardGen">Generator</h2>
             </div>
             <div class="glass-card-body">
-                <div class="mode-row" role="group" aria-label="Password mode">
-                    <button class="mbtn on" type="button" data-mode="random" id="mRandom" aria-pressed="true">Random</button>
-                    <button class="mbtn" type="button" data-mode="pronounce" id="mPronounce" aria-pressed="false">Pronounce</button>
-                    <button class="mbtn" type="button" data-mode="passphrase" id="mPassphrase" aria-pressed="false">Passphrase</button>
-                    <button class="mbtn" type="button" data-mode="pin" id="mPin" aria-pressed="false">PIN</button>
+                <div class="mode-row" role="group" data-i18n-aria="ariaMode" aria-label="Password mode">
+                    <button class="mbtn on" type="button" data-mode="random" id="mRandom" data-i18n="mRandom" aria-pressed="true">Random</button>
+                    <button class="mbtn" type="button" data-mode="pronounce" id="mPronounce" data-i18n="mPronounce" aria-pressed="false">Pronounceable</button>
+                    <button class="mbtn" type="button" data-mode="passphrase" id="mPassphrase" data-i18n="mPP" aria-pressed="false">Passphrase</button>
+                    <button class="mbtn" type="button" data-mode="pin" id="mPin" data-i18n="mPin" aria-pressed="false">PIN</button>
                 </div>
 
                 <div id="panRandom">
                     <div class="slider-row">
-                        <span class="lbl" id="lblLength">Length</span>
-                        <span class="badge-val" id="lenVal">24</span>
+                        <span class="lbl" id="lblLength" data-i18n="lblLength">Length</span>
+                        <span class="badge-val" id="lenVal" aria-live="polite">24</span>
                     </div>
                     <div class="slider-row">
-                        <input type="range" id="lenRange" min="4" max="128" value="24" aria-label="Password length" />
+                        <input type="range" id="lenRange" min="4" max="128" value="24" data-i18n-aria="ariaLenRange" aria-label="Password length" />
                     </div>
 
-                    <div class="lbl section-lbl" id="lblChars">Characters</div>
-                    <div class="pill-grid" aria-label="Character options">
+                    <div class="lbl section-lbl" id="lblChars" data-i18n="lblChars">Characters</div>
+                    <div class="pill-grid" data-i18n-aria="ariaCharOpts" aria-label="Character options">
                         <label class="pill on"><input type="checkbox" id="cU" checked /> <span class="dot" aria-hidden="true"></span>A–Z</label>
                         <label class="pill on"><input type="checkbox" id="cL" checked /> <span class="dot" aria-hidden="true"></span>a–z</label>
                         <label class="pill on"><input type="checkbox" id="cN" checked /> <span class="dot" aria-hidden="true"></span>0–9</label>
                         <label class="pill"><input type="checkbox" id="cS" /> <span class="dot" aria-hidden="true"></span>!@#$%</label>
-                        <label class="pill"><input type="checkbox" id="cSp" /> <span class="dot" aria-hidden="true"></span><span id="lblSpace">Space</span></label>
+                        <label class="pill"><input type="checkbox" id="cSp" /> <span class="dot" aria-hidden="true"></span><span id="lblSpace" data-i18n="lblSpace">Space</span></label>
                     </div>
 
-                    <div class="chip-group" aria-label="Random password options">
-                        <label class="chip"><input type="checkbox" id="cSim" /> <span id="lblSim">Avoid O0l1</span></label>
-                        <label class="chip"><input type="checkbox" id="cAmb" /> <span id="lblAmb">Avoid {}[]</span></label>
-                        <label class="chip"><input type="checkbox" id="cMask" /> <span id="lblMask">Hide</span></label>
+                    <div class="chip-group" data-i18n-aria="ariaRandomOpts" aria-label="Random password options">
+                        <label class="chip"><input type="checkbox" id="cSim" /> <span id="lblSim" data-i18n="lblSim">Avoid O0l1</span></label>
+                        <label class="chip"><input type="checkbox" id="cAmb" /> <span id="lblAmb" data-i18n="lblAmb">Avoid {}[]</span></label>
+                        <label class="chip"><input type="checkbox" id="cMask" /> <span id="lblMask" data-i18n="lblMask">Hide</span></label>
                     </div>
                 </div>
 
                 <div id="panPP" style="display:none;">
                     <div class="pp-row">
-                        <span class="lbl" id="lblWC">Word count</span>
+                        <span class="lbl" id="lblWC" data-i18n="lblWC">Word count</span>
                         <span class="badge-val" id="wcVal">5</span>
-                        <input type="range" id="wcRange" min="3" max="12" value="5" style="flex:1;" aria-label="Word count" />
+                        <input type="range" id="wcRange" min="3" max="12" value="5" data-i18n-aria="ariaWcRange" aria-label="Word count" />
                     </div>
                     <div class="pp-row">
-                        <span class="lbl" id="lblSep">Separator:</span>
-                        <input class="sep-input" id="sepInp" value="-" maxlength="5" aria-label="Separator" />
-                        <label class="chip"><input type="checkbox" id="cPPN" /> <span id="lblPPN">+ Number</span></label>
-                        <label class="chip on"><input type="checkbox" id="cPPC" checked /> <span id="lblPPC">Capitalize</span></label>
+                        <span class="lbl" id="lblSep" data-i18n="lblSep">Separator:</span>
+                        <input class="sep-input" id="sepInp" value="-" maxlength="5" data-i18n-aria="ariaSep" aria-label="Separator" />
+                        <label class="chip"><input type="checkbox" id="cPPN" /> <span id="lblPPN" data-i18n="lblPPN">+ Number</span></label>
+                        <label class="chip on"><input type="checkbox" id="cPPC" checked /> <span id="lblPPC" data-i18n="lblPPC">Capitalize</span></label>
                     </div>
                 </div>
 
                 <div id="panPin" style="display:none;">
                     <div class="pp-row">
-                        <span class="lbl" id="lblPinD">PIN Digits</span>
+                        <span class="lbl" id="lblPinD" data-i18n="lblPinD">PIN digits</span>
                         <span class="badge-val" id="pinVal">6</span>
-                        <input type="range" id="pinRange" min="4" max="12" value="6" style="flex:1;" aria-label="PIN length" />
+                        <input type="range" id="pinRange" min="4" max="12" value="6" data-i18n-aria="ariaPinRange" aria-label="PIN length" />
                     </div>
-                    <div class="chip-group" aria-label="PIN options">
-                        <label class="chip"><input type="checkbox" id="cNR" /> <span id="lblNR">No repeat</span></label>
-                        <label class="chip"><input type="checkbox" id="cNS" /> <span id="lblNS">No sequence</span></label>
+                    <div class="chip-group" data-i18n-aria="ariaPinOpts" aria-label="PIN options">
+                        <label class="chip"><input type="checkbox" id="cNR" /> <span id="lblNR" data-i18n="lblNR">No repeats</span></label>
+                        <label class="chip"><input type="checkbox" id="cNS" /> <span id="lblNS" data-i18n="lblNS">No sequences</span></label>
                     </div>
                 </div>
 
                 <button class="gen-btn" id="genBtn" type="button">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    <span id="btnGenTxt">Generate Password</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span id="btnGenTxt" data-i18n="btnGen">Generate password</span>
                 </button>
 
                 <div class="pw-display">
-                    <div class="pw-text" id="pwt">—</div>
+                    <output class="pw-text" id="pwt" aria-live="polite" aria-atomic="true">—</output>
                     <div class="pw-actions">
-                        <button class="act-btn" type="button" data-action="copy" aria-label="Copy password">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            <span class="tt" id="ttCopy">Copy</span>
+                        <button class="act-btn" type="button" data-action="copy" data-i18n-aria="ariaCopy" aria-label="Copy password">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span class="tt" id="ttCopy" data-i18n="ttCopy">Copy</span>
                         </button>
-                        <button class="act-btn" type="button" data-action="refresh" aria-label="Generate new password">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4v6h-6"/><path d="M20.49 15A9 9 0 1 1 5.64 5.64L1 10"/></svg>
-                            <span class="tt" id="ttRef">New</span>
+                        <button class="act-btn" type="button" data-action="refresh" data-i18n-aria="ariaNew" aria-label="Generate new password">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 4v6h-6"/><path d="M20.49 15A9 9 0 1 1 5.64 5.64L1 10"/></svg>
+                            <span class="tt" id="ttRef" data-i18n="ttRef">New</span>
                         </button>
-                        <button class="act-btn" type="button" data-action="save" aria-label="Save to vault">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
-                            <span class="tt" id="ttSV">Save</span>
+                        <button class="act-btn" type="button" data-action="save" data-i18n-aria="ariaSave" aria-label="Save to vault">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+                            <span class="tt" id="ttSV" data-i18n="ttSV">Save</span>
                         </button>
-                        <button class="act-btn" type="button" data-action="download" aria-label="Download password">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            <span class="tt" id="ttDL">Download</span>
+                        <button class="act-btn" type="button" data-action="download" data-i18n-aria="ariaDL" aria-label="Download password">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span class="tt" id="ttDL" data-i18n="ttDL">Download</span>
                         </button>
-                        <button class="act-btn" type="button" data-action="share" aria-label="Share password">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                            <span class="tt" id="ttSh">Share</span>
+                        <button class="act-btn" type="button" data-action="share" data-i18n-aria="ariaSh" aria-label="Share password">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                            <span class="tt" id="ttSh" data-i18n="ttSh">Share</span>
                         </button>
                     </div>
                 </div>
 
                 <div class="strength-row">
                     <div class="strength-ring">
-                        <svg width="52" height="52" viewBox="0 0 56 56" aria-hidden="true">
+                        <svg width="52" height="52" viewBox="0 0 56 56" aria-hidden="true" focusable="false">
                             <circle class="ring-bg" cx="28" cy="28" r="23" />
                             <circle class="ring-fill" id="rfl" cx="28" cy="28" r="23" stroke-dasharray="144.51" stroke-dashoffset="144.51" stroke="var(--blue)" />
                         </svg>
                         <div class="ring-center">
                             <span class="bits" id="ebits">0</span>
-                            <span class="label">bits</span>
+                            <span class="label" data-i18n="bitsLbl">bits</span>
                         </div>
                     </div>
-                    <div class="strength-body">
+                    <div class="strength-body" aria-live="polite">
                         <div class="strength-top">
                             <span class="strength-label" id="slbl">—</span>
                             <span class="crack-time" id="crack"></span>
@@ -379,30 +386,30 @@
         </section>
 
         <section class="glass-card" aria-labelledby="toolsTitle">
-            <h2 id="toolsTitle" class="sr-only">Vault tools</h2>
+            <h2 id="toolsTitle" class="sr-only" data-i18n="titleTools">Vault tools</h2>
             <div class="glass-card-body">
-                <div class="tabs" role="tablist" aria-label="Vault tools">
-                    <button class="tab on" role="tab" aria-selected="true" aria-controls="tp-hist" data-tab="hist" id="tabHist" type="button">History</button>
-                    <button class="tab" role="tab" aria-selected="false" aria-controls="tp-ana" data-tab="ana" id="tabAna" type="button">Analyze</button>
-                    <button class="tab" role="tab" aria-selected="false" aria-controls="tp-vault" data-tab="vault" id="tabVault" type="button">Vault</button>
-                    <button class="tab" role="tab" aria-selected="false" aria-controls="tp-tips" data-tab="tips" id="tabTips" type="button">Tips</button>
+                <div class="tabs" role="tablist" data-i18n-aria="titleTools" aria-label="Vault tools">
+                    <button class="tab on" role="tab" aria-selected="true" aria-controls="tp-hist" data-tab="hist" id="tabHist" type="button" data-i18n="tabH">History</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="tp-ana" data-tab="ana" id="tabAna" type="button" data-i18n="tabA">Analyze</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="tp-vault" data-tab="vault" id="tabVault" type="button" data-i18n="tabV">Vault</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="tp-tips" data-tab="tips" id="tabTips" type="button" data-i18n="tabT">Tips</button>
                 </div>
 
                 <div class="tp on" role="tabpanel" id="tp-hist" aria-labelledby="tabHist">
                     <div class="hist-header">
-                        <span class="lbl" id="lblClickUse">Click to use</span>
-                        <button class="hist-clear" id="clearHistBtn" type="button">Clear all</button>
+                        <span class="lbl" id="lblClickUse" data-i18n="lblClickUse">Click a password to use it</span>
+                        <button class="hist-clear" id="clearHistBtn" type="button" data-i18n="btnClearH">Clear all</button>
                     </div>
-                    <div class="hist-list" id="hlist">
+                    <div class="hist-list" id="hlist" aria-live="polite">
                         <div class="empty-state">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            <span id="emptyH">No history yet</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span id="emptyH" data-i18n="emptyH">No history yet. Passwords you generate will appear here.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="tp" role="tabpanel" id="tp-ana" aria-labelledby="tabAna">
-                    <input class="analyze-input" id="ainp" placeholder="Enter a password to analyze…" aria-label="Analyze password" />
+                    <input class="analyze-input" id="ainp" type="text" data-i18n-placeholder="ainpPH" placeholder="Enter a password to analyze…" data-i18n-aria="ariaAnalyze" aria-label="Analyze password" autocomplete="off" spellcheck="false" />
                     <div id="ares" style="display:none;" aria-live="polite">
                         <div class="analyze-grid" id="agrid"></div>
                         <div class="char-bars" id="cbk"></div>
@@ -411,33 +418,33 @@
 
                 <div class="tp" role="tabpanel" id="tp-vault" aria-labelledby="tabVault">
                     <div class="vault-header">
-                        <span class="lbl" id="lblVaultTitle">Vault</span>
+                        <span class="lbl" id="lblVaultTitle" data-i18n="vaultTitle">Vault</span>
                         <div class="vault-actions">
-                            <button class="vault-btn-outline" id="exportCSVBtn" type="button">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                CSV
+                            <button class="vault-btn-outline" id="exportCSVBtn" type="button" data-i18n-aria="ariaCsv" aria-label="Export vault as CSV">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span data-i18n="csvBtn">CSV</span>
                             </button>
                             <button class="vault-btn-outline" id="clearVaultBtn" type="button">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
-                                Clear
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+                                <span data-i18n="btnClearV">Clear</span>
                             </button>
                         </div>
                     </div>
                     <div class="vault-form">
                         <div class="row">
-                            <input class="vault-input" id="vSite" placeholder="Website / App" aria-label="Website or app" />
-                            <input class="vault-input" id="vUser" placeholder="Username / Email" aria-label="Username or email" />
+                            <input class="vault-input" id="vSite" type="text" data-i18n-placeholder="vSitePH" placeholder="Website or app" data-i18n-aria="vSitePH" aria-label="Website or app" />
+                            <input class="vault-input" id="vUser" type="text" data-i18n-placeholder="vUserPH" placeholder="Username or email" data-i18n-aria="vUserPH" aria-label="Username or email" />
                         </div>
                         <div class="btn-row">
-                            <input class="vault-input" id="vPw" style="flex:1;font-family:var(--font-mono);" placeholder="Password" aria-label="Password" />
-                            <button class="vbtn" id="useCurBtn" type="button">Use current</button>
+                            <input class="vault-input vault-input-mono" id="vPw" type="text" data-i18n-placeholder="vPwPH" placeholder="Password" data-i18n-aria="vPwPH" aria-label="Password" spellcheck="false" />
+                            <button class="vbtn" id="useCurBtn" type="button" data-i18n="btnUseCur">Use current</button>
                         </div>
-                        <button class="vbtn primary" id="saveVaultBtn" type="button" style="width:100%;padding:0.65rem;">Save to Vault</button>
+                        <button class="vbtn primary vbtn-full" id="saveVaultBtn" type="button" data-i18n="btnSaveV">Save to vault</button>
                     </div>
                     <div class="vault-entries" id="ventries" aria-live="polite">
                         <div class="empty-state">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <span id="emptyV">Vault is empty.</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span id="emptyV" data-i18n="emptyV">Your vault is empty. Save a password to see it here.</span>
                         </div>
                     </div>
                 </div>
@@ -453,22 +460,22 @@
        href="https://buymeacoffee.com/hajirstudio"
        target="_blank"
        rel="noopener noreferrer"
-       aria-label="Support Raia Vault — buy me a coffee">
+       data-i18n-aria="ariaDonate"
+       aria-label="Support Raia Vault by buying me a coffee">
         <span class="donate-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </span>
-        <span class="donate-txt">Donate</span>
+        <span class="donate-txt" data-i18n="donate">Donate</span>
     </a>
 
-    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cookieTitle">
-        <div class="text" id="cookieTitle">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>
-            This site uses cookies to enhance your experience. By using Raia Vault, you agree to our
-            <a href="https://raia-footer.netlify.app/#cookie" target="_blank" rel="noopener">Cookie Policy</a>.
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="false" aria-labelledby="cookieText">
+        <div class="text">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>
+            <span id="cookieText" data-i18n="cookieText">This site uses cookies to improve your experience. By using Raia Vault, you agree to our <a href="https://hajir.is-a.dev/raia-footer/#cookie" target="_blank" rel="noopener">Cookie Policy</a>.</span>
         </div>
         <div class="actions">
-            <button class="cbtn" id="declineCookiesBtn" type="button">Reject</button>
-            <button class="cbtn primary" id="acceptCookiesBtn" type="button">Accept</button>
+            <button class="cbtn" id="declineCookiesBtn" type="button" data-i18n="btnReject">Reject</button>
+            <button class="cbtn primary" id="acceptCookiesBtn" type="button" data-i18n="btnAccept">Accept</button>
         </div>
     </div>
 
@@ -476,23 +483,23 @@
         <div class="footer-inner">
             <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="Haiere logo" class="footer-logo" width="36" height="36" loading="lazy" decoding="async" />
             <div class="footer-name">Raia Vault</div>
-            <div class="footer-tagline">Haiere: The Future of Digital Privacy</div>
+            <div class="footer-tagline" data-i18n="footerTagline">Haiere: The Future of Digital Privacy</div>
 
             <a class="footer-donate" href="https://buymeacoffee.com/hajirstudio" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                Buy me a coffee
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                <span data-i18n="donateFull">Buy me a coffee</span>
             </a>
 
-            <div class="footer-links">
-                <a href="https://raia-footer.netlify.app/#privacy" rel="noopener noreferrer">Privacy Policy</a>
-                <a href="https://raia-footer.netlify.app/#terms" rel="noopener noreferrer">Terms &amp; Conditions</a>
-            </div>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="https://hajir.is-a.dev/raia-footer/#privacy" rel="noopener noreferrer" data-i18n="footerPrivacy">Privacy Policy</a>
+                <a href="https://hajir.is-a.dev/raia-footer/#terms" rel="noopener noreferrer" data-i18n="footerTerms">Terms &amp; Conditions</a>
+            </nav>
 
             <div class="footer-divider" aria-hidden="true"></div>
 
             <div class="footer-meta">
-                <span class="copyright">© <span id="year">2026</span> Haiere. All rights reserved.</span>
-                <span class="version">v1.2.3 • stable</span>
+                <span class="copyright" data-i18n="copyright">© 2026 Haiere. All rights reserved.</span>
+                <span class="version" data-i18n="footerVer">v1.2.4 • stable</span>
             </div>
         </div>
     </footer>
@@ -504,10 +511,14 @@
 
     <noscript>
         <div class="noscript-warning">
-            Raia Vault needs JavaScript enabled to generate and analyze passwords securely in your browser.
+            Raia Vault needs JavaScript to create and check passwords securely in your browser.<br />
+            Raia Vault membutuhkan JavaScript untuk membuat dan memeriksa password dengan aman di browser kamu.
         </div>
     </noscript>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="i18n.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>
